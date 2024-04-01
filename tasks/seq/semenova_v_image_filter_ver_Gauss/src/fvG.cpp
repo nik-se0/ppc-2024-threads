@@ -1,7 +1,7 @@
 // Copyright 2024 Semenova Veronika
 #include "seq/semenova_v_image_filter_ver_Gauss/include/fvG.hpp"
 
-std::vector<std::vector<int>> convert12(int* const array, size_t rows, size_t cols) {
+std::vector<std::vector<int>> convert12(const int* array, size_t rows, size_t cols) {
   std::vector<std::vector<int>> result(rows, std::vector<int>(cols));
   for (size_t i = 0; i < rows; ++i) {
     for (size_t j = 0; j < cols; ++j) {
