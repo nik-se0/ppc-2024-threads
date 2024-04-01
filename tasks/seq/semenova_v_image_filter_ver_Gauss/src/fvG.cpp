@@ -29,7 +29,7 @@ bool ImageFilterVerGauss::pre_processing() {
   image = convert12(reinterpret_cast<int*>(taskData->inputs[0]), n, m);
 
   for (auto& row : image) {
-    for (size_t& pixel : row) {
+    for (int& pixel : row) {
       pixel = std::max(0, std::min(255, pixel));
     }
   }
@@ -64,7 +64,7 @@ bool ImageFilterVerGauss::post_processing() {
   internal_order_test();
 
   for (auto& row : filteredImage) {
-    for (size_t& pixel : row) {
+    for (int& pixel : row) {
       pixel = std::max(0, std::min(255, pixel));
     }
   }
