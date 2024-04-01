@@ -14,15 +14,10 @@ std::vector<std::vector<int>> convert12(int* array, int rows, int cols) {
 bool ImageFilterVerGauss::validation() {
   internal_order_test();
 
-  return !taskData->inputs.empty() && !taskData->outputs.empty() &&
-         !taskData->inputs_count.empty() && !taskData->outputs_count.empty() &&
-         taskData->inputs[0] != nullptr && taskData->outputs[0] != nullptr &&
-         taskData->outputs_count[0] == taskData->inputs_count[0] &&
-         taskData->outputs_count[1] == taskData->inputs_count[1] &&
-         taskData->outputs_count[0] >= 3 &&
-         taskData->outputs_count[1] >=
-             3  // the image size <>= size of filter core
-      ;
+ return !taskData->inputs.empty() && !taskData->outputs.empty() && !taskData->inputs_count.empty() &&
+         !taskData->outputs_count.empty() && taskData->inputs[0] != nullptr && taskData->outputs[0] != nullptr &&
+         taskData->outputs_count[1] == taskData->inputs_count[1] && taskData->outputs_count[0] >= 3 &&
+         +taskData->outputs_count[1] >= 3;  // the image size <>= size of filter core
 }
 
 bool ImageFilterVerGauss::pre_processing() {
@@ -55,12 +50,9 @@ bool ImageFilterVerGauss::run() {
   }
 }
 */
-      sum =
-          image[i - 1][j - 1] * kernel[0][0] + image[i - 1][j] * kernel[0][1] +
-          image[i - 1][j + 1] * kernel[0][2] + image[i][j - 1] * kernel[1][0] +
-          image[i][j] * kernel[1][1] + image[i][j + 1] * kernel[1][2] +
-          image[i + 1][j - 1] * kernel[2][0] + image[i + 1][j] * kernel[2][1] +
-          image[i + 1][j + 1] * kernel[2][2];
+      sum = image[i - 1][j - 1] * kernel[0][0] + image[i - 1][j] * kernel[0][1] + image[i - 1][j + 1] * kernel[0][2] +
+            image[i][j - 1] * kernel[1][0] + image[i][j] * kernel[1][1] + image[i][j + 1] * kernel[1][2] +
+            image[i + 1][j - 1] * kernel[2][0] + image[i + 1][j] * kernel[2][1] + image[i + 1][j + 1] * kernel[2][2];
       filteredImage[i][j] = (int)sum;
     }
   }
