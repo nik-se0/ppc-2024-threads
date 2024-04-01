@@ -149,7 +149,8 @@ TEST(semenova_v_image_filter_ver_Gauss, Creat_task_with_wrong_matrix_size1) {
   size_t n = 3;
   size_t a = 6;
   size_t b = 6;
-  std::vector<std::vector<int>> image(n * m), filteredImage(2 * n * 2 * m);
+  std::vector<int> image(n * m);
+  std::vector<int> filteredImage(n * m);
 
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
 
