@@ -18,8 +18,8 @@ TEST(semenova_v_image_filter_ver_Gauss, test_pipeline_run) {
   std::vector<int> image(n * m);
   std::vector<int> filteredImage(n * m);
 
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < m; j++) {
+  for (size_t i = 0; i < n; i++) {
+    for (size_t j = 0; j < m; j++) {
       if (i == j) {
         image[i * m + j] = 10;
         filteredImage[i * m + j] = 10;
@@ -52,8 +52,8 @@ TEST(semenova_v_image_filter_ver_Gauss, test_pipeline_run) {
   perfAnalyzer->pipeline_run(perfAttr, perfResults);
   ppc::core::Perf::print_perf_statistic(perfResults);
 
-  for (int i = 1; i < n - 1; ++i) {
-    for (int j = 1; j < m - 1; ++j) {
+  for (size_t i = 1; i < n - 1; ++i) {
+    for (size_t j = 1; j < m - 1; ++j) {
       if (i == j) {
         EXPECT_EQ(filteredImage[i * m + j], 3);
       } else {
@@ -73,8 +73,8 @@ TEST(semenova_v_image_filter_ver_Gauss, test_task_run) {
   std::vector<int> image(n * m);
   std::vector<int> filteredImage(n * m);
 
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < m; j++) {
+  for (size_t i = 0; i < n; i++) {
+    for (size_t j = 0; j < m; j++) {
       if (i == j) {
         image[i * m + j] = 10;
         filteredImage[i * m + j] = 10;
@@ -107,8 +107,8 @@ TEST(semenova_v_image_filter_ver_Gauss, test_task_run) {
   perfAnalyzer->pipeline_run(perfAttr, perfResults);
   ppc::core::Perf::print_perf_statistic(perfResults);
 
-  for (int i = 1; i < n - 1; ++i) {
-    for (int j = 1; j < m - 1; ++j) {
+  for (size_t i = 1; i < n - 1; ++i) {
+    for (size_t j = 1; j < m - 1; ++j) {
       if (i == j) {
         EXPECT_EQ(filteredImage[i * m + j], 3);
       } else {

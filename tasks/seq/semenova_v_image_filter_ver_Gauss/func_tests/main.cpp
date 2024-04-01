@@ -9,7 +9,7 @@
 std::vector<int> CreateRandomVector(int n) {
   // std::srand(0);
   std::vector<int> vec(n);
-  for (int i = 0; i < n; i++) {
+  for (size_t i = 0; i < n; i++) {
     vec[i] = std::rand() % 256;
   }
   return vec;
@@ -341,7 +341,7 @@ TEST(semenova_v_image_filter_ver_Gauss, Task_run_correct1) {
     ImageFilterVerGauss.run();
     ImageFilterVerGauss.post_processing();
 
-    for (int i = 0; i < n * m; ++i) {
+    for (size_t i = 0; i < n * m; ++i) {
       EXPECT_EQ(filteredImage[i], res[i]);
     }
   }
@@ -371,7 +371,7 @@ TEST(semenova_v_image_filter_ver_Gauss, Task_run_correct2) {
     ImageFilterVerGauss.run();
     ImageFilterVerGauss.post_processing();
 
-    for (int i = 0; i < n * m; ++i) {
+    for (size_t i = 0; i < n * m; ++i) {
       EXPECT_EQ(filteredImage[i], res[i]);
     }
   }
@@ -401,7 +401,7 @@ TEST(semenova_v_image_filter_ver_Gauss, Task_correct_pre_processing) {
     ImageFilterVerGauss.run();
     ImageFilterVerGauss.post_processing();
 
-    for (int i = 0; i < n * m; ++i) {
+    for (size_t i = 0; i < n * m; ++i) {
       EXPECT_EQ(filteredImage[i], res[i]);
     }
   }

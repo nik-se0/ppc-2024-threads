@@ -1,10 +1,10 @@
 // Copyright 2024 Semenova Veronika
 #include "seq/semenova_v_image_filter_ver_Gauss/include/fvG.hpp"
 
-std::vector<std::vector<int>> convert12(int* array, int rows, int cols) {
+std::vector<std::vector<int>> convert12(int* array, size_t rows, size_t cols) {
   std::vector<std::vector<int>> result(rows, std::vector<int>(cols));
-  for (int i = 0; i < rows; ++i) {
-    for (int j = 0; j < cols; ++j) {
+  for (size_t i = 0; i < rows; ++i) {
+    for (size_t j = 0; j < cols; ++j) {
       result[i][j] = array[i * cols + j];
     }
   }
@@ -29,7 +29,7 @@ bool ImageFilterVerGauss::pre_processing() {
   image = convert12(reinterpret_cast<int*>(taskData->inputs[0]), n, m);
 
   for (auto& row : image) {
-    for (int& pixel : row) {
+    for (size_t& pixel : row) {
       pixel = std::max(0, std::min(255, pixel));
     }
   }
@@ -41,11 +41,11 @@ bool ImageFilterVerGauss::pre_processing() {
 bool ImageFilterVerGauss::run() {
   internal_order_test();
 
-  for (int i = 1; i < n - 1; ++i) {
-    for (int j = 1; j < m - 1; ++j) {
+  for (size_t i = 1; i < n - 1; ++i) {
+    for (size_t j = 1; j < m - 1; ++j) {
       double sum = 0;
-      /* for (int x = -1; x <= 1; ++x) {
-            for (int y = -1; y <= 1; ++y) {
+      /* for (size_t x = -1; x <= 1; ++x) {
+            for (size_t y = -1; y <= 1; ++y) {
             sum += image[i + x][j + y] * kernel[x + 1][y + 1];
   }
 }
@@ -64,14 +64,14 @@ bool ImageFilterVerGauss::post_processing() {
   internal_order_test();
 
   for (auto& row : filteredImage) {
-    for (int& pixel : row) {
+    for (size_t& pixel : row) {
       pixel = std::max(0, std::min(255, pixel));
     }
   }
 
   int* d = reinterpret_cast<int*>(taskData->outputs[0]);
-  for (int i = 0; i < n; ++i) {
-    for (int j = 0; j < n; j++) {
+  for (size_t i = 0; i < n; ++i) {
+    for (size_t j = 0; j < n; j++) {
       d[i * n + j] = filteredImage[i][j];
     }
   }
