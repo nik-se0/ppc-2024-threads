@@ -6,7 +6,7 @@
 
 #include "seq/semenova_v_image_filter_ver_Gauss/include/fvG.hpp"
 
-std::vector<int> CreateRandomVector(int n) {
+std::vector<int> CreateRandomVector(size_t n) {
   // std::srand(0);
   std::vector<int> vec(n);
   for (size_t i = 0; i < n; i++) {
