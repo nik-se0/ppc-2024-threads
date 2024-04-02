@@ -72,7 +72,11 @@ for table_name in result_tables:
     right_border = workbook.add_format({'right': 2})
     for task_name in list(set(set_of_task_name)):
         for type_of_task in list_of_type_of_tasks:
-            par_time = result_tables[table_name][task_name][type_of_task]
+            #par_time = result_tables[table_name][task_name][type_of_task]
+            if task_name in result_tables[table_name] and type_of_task in result_tables[table_name][task_name]:
+                par_time = result_tables[table_name][task_name][type_of_task]
+            else:
+                par_time = -1  # или любое другое значение по умолчанию
             seq_time = result_tables[table_name][task_name]["seq"]
             speed_up = seq_time / par_time
             efficiency = speed_up / cpu_num
