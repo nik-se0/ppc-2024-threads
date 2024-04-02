@@ -1,7 +1,7 @@
 // Copyright 2024 Semenova Veronika
 #include <gtest/gtest.h>
-
 #include <omp.h>
+
 #include <random>
 #include <vector>
 
