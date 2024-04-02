@@ -146,8 +146,12 @@ TEST(semenova_v_image_filter_ver_Gauss_omp, Creat_task_without_outputs3) {
   ASSERT_FALSE(ImageFilterVerGauss.validation());
 }
 TEST(semenova_v_image_filter_ver_Gauss_omp, Creat_task_with_wrong_matrix_size1) {
-  int n = 3, m = 3, a = 6, b = 6;
-  std::vector<std::vector<int>> image(n * m), filteredImage(2 * n * 2 * m);
+  int n = 3;
+  int m = 3;
+  int a = 6;
+  int b = 6;
+  std::vector<int> image(n * m);
+  std::vector<int> filteredImage(n * m);
 
   std::shared_ptr<ppc::core::TaskData> taskDataOmp = std::make_shared<ppc::core::TaskData>();
 
@@ -163,7 +167,8 @@ TEST(semenova_v_image_filter_ver_Gauss_omp, Creat_task_with_wrong_matrix_size1) 
   ASSERT_FALSE(ImageFilterVerGauss.validation());
 }
 TEST(semenova_v_image_filter_ver_Gauss_omp, Creat_task_with_wrong_matrix_size2) {
-  int n = 2, m = 2;
+  int n = 2;
+  int m = 2;
   std::vector<int> image(n * m);
   std::vector<int> filteredImage(n * m);
 
@@ -347,7 +352,8 @@ TEST(semenova_v_image_filter_ver_Gauss_omp, Task_run_correct1) {
   }
 }
 TEST(semenova_v_image_filter_ver_Gauss_omp, Task_run_correct2) {
-  int n = 4, m = 4;
+  int n = 4;
+  int m = 4;
   std::vector<int> image(n * m);
   std::vector<int> filteredImage(n * m);
   image = {1, 50, 3, 125, 1, 4, 0, 69, 0, 7, 8, 98, 0, 0, 0, 0};
@@ -377,7 +383,8 @@ TEST(semenova_v_image_filter_ver_Gauss_omp, Task_run_correct2) {
   }
 }
 TEST(semenova_v_image_filter_ver_Gauss_omp, Task_correct_pre_processing) {
-  int n = 4, m = 4;
+  int n = 4;
+  int m = 4;
   std::vector<int> image(n * m);
   std::vector<int> filteredImage(n * m);
   image = {285, 285, 285, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255};
@@ -407,7 +414,8 @@ TEST(semenova_v_image_filter_ver_Gauss_omp, Task_correct_pre_processing) {
   }
 }
 TEST(semenova_v_image_filter_ver_Gauss_omp, Task_correct_with_random_image) {
-  int n = 10, m = 10;
+  int n = 10;
+  int m = 10;
   std::vector<int> image(n * m);
   std::vector<int> filteredImage(n * m);
   image = CreateRandomVector(n * m);
