@@ -2,8 +2,8 @@
 #pragma once
 
 #include <omp.h>
-#include <vector>
 
+#include <vector>
 
 #include "core/task/include/task.hpp"
 
