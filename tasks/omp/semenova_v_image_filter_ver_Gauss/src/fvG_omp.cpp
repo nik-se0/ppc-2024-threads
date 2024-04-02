@@ -1,7 +1,7 @@
 // Copyright 2024 Semenova Veronika
 #include "omp/semenova_v_image_filter_ver_Gauss/include/fvG_omp.hpp"
 
-std::vector<std::vector<int>> convert12(int* array, int rows, int cols) {
+std::vector<std::vector<int>> convert12(const int* array, int rows, int cols) {
   std::vector<std::vector<int>> result(rows, std::vector<int>(cols));
   for (int i = 0; i < rows; ++i) {
     for (int j = 0; j < cols; ++j) {
