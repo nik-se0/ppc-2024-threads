@@ -431,10 +431,4 @@ TEST(semenova_v_image_filter_ver_Gauss_omp, Task_correct_with_random_image) {
     ImageFilterVerGauss.run();
     ASSERT_TRUE(ImageFilterVerGauss.post_processing());
   }
-
-  int i = 0;
-  while (true) {
-    i++;
-  }
-
 }
