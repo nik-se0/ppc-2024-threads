@@ -61,30 +61,6 @@ bool ImageFilterVerGauss::run() {
   return true;
 }
 
-
-/*
-bool ImageFilterVerGauss::run() {
-  internal_order_test();
-
-  for (int i = 1; i < n - 1; ++i) {
-    for (int j = 1; j < m - 1; ++j) {
-      double sum = 0;
-      /* for (int x = -1; x <= 1; ++x) {
-            for (int y = -1; y <= 1; ++y) {
-            sum += image[i + x][j + y] * kernel[x + 1][y + 1];
-  }
-}
-
-      sum = image[i - 1][j - 1] * kernel[0][0] + image[i - 1][j] * kernel[0][1] + image[i - 1][j + 1] * kernel[0][2] +
-            image[i][j - 1] * kernel[1][0] + image[i][j] * kernel[1][1] + image[i][j + 1] * kernel[1][2] +
-            image[i + 1][j - 1] * kernel[2][0] + image[i + 1][j] * kernel[2][1] + image[i + 1][j + 1] * kernel[2][2];
-      filteredImage[i][j] = (int)sum;
-    }
-  }
-
-  return true;
-}*/
-
 bool ImageFilterVerGauss::post_processing() {
   internal_order_test();
 
