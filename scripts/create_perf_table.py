@@ -1,39 +1,3 @@
-Skip to content
-nik-se0
-/
-ppc-2024-threads
-
-Type / to search
-
-Code
-Pull requests
-2
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Breadcrumbsppc-2024-threads/scripts
-/create_perf_table.py
-Go to file
-t
-Latest commit
-allnes
-allnes
-Initial commit
-7f4869c
- · 
-2 weeks ago
-History
-Breadcrumbsppc-2024-threads/scripts
-/create_perf_table.py
-File metadata and controls
-
-Code
-
-Blame
-87 lines (76 loc) · 3.25 KB
 import argparse
 import os
 import re
