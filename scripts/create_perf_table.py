@@ -1,3 +1,39 @@
+Skip to content
+nik-se0
+/
+ppc-2024-threads
+
+Type / to search
+
+Code
+Pull requests
+2
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Breadcrumbsppc-2024-threads/scripts
+/create_perf_table.py
+Go to file
+t
+Latest commit
+allnes
+allnes
+Initial commit
+7f4869c
+ · 
+2 weeks ago
+History
+Breadcrumbsppc-2024-threads/scripts
+/create_perf_table.py
+File metadata and controls
+
+Code
+
+Blame
+87 lines (76 loc) · 3.25 KB
 import argparse
 import os
 import re
@@ -72,11 +108,7 @@ for table_name in result_tables:
     right_border = workbook.add_format({'right': 2})
     for task_name in list(set(set_of_task_name)):
         for type_of_task in list_of_type_of_tasks:
-            #par_time = result_tables[table_name][task_name][type_of_task]
-            if task_name in result_tables[table_name] and type_of_task in result_tables[table_name][task_name]:
-                par_time = result_tables[table_name][task_name][type_of_task]
-            else:
-                par_time = -1  # или любое другое значение по умолчанию
+            par_time = result_tables[table_name][task_name][type_of_task]
             seq_time = result_tables[table_name][task_name]["seq"]
             speed_up = seq_time / par_time
             efficiency = speed_up / cpu_num
