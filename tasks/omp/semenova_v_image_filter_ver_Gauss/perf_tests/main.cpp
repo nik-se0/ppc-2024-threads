@@ -8,9 +8,7 @@
 #include "core/perf/include/perf.hpp"
 #include "omp/semenova_v_image_filter_ver_Gauss/include/fvG_omp.hpp"
 
-double Timer() {
-    return omp_get_wtime();
-}
+double Timer() { return omp_get_wtime(); }
 
 TEST(semenova_v_image_filter_ver_Gauss_omp, test_pipeline_run) {
   size_t n = 4000;
@@ -120,5 +118,4 @@ TEST(semenova_v_image_filter_ver_Gauss_omp, test_task_run) {
       }
     }
   }
-
 }
