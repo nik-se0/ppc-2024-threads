@@ -9,12 +9,12 @@
 
 double Timer() {
   auto current = std::chrono::high_resolution_clock::now();
-  return static_cast<double>(current.time_since_epoch().count()) * 1e-8;
+  return static_cast<double>(current.time_since_epoch().count()) * 1e-9;
 }
 
 TEST(semenova_v_image_filter_ver_Gauss, test_pipeline_run) {
-  size_t n = 2000;
-  size_t m = 2000;
+  size_t n = 4000;
+  size_t m = 4000;
   std::vector<int> image(n * m);
   std::vector<int> filteredImage(n * m);
 
@@ -68,8 +68,8 @@ TEST(semenova_v_image_filter_ver_Gauss, test_pipeline_run) {
 }
 
 TEST(semenova_v_image_filter_ver_Gauss, test_task_run) {
-  size_t n = 2000;
-  size_t m = 2000;
+  size_t n = 4000;
+  size_t m = 4000;
   std::vector<int> image(n * m);
   std::vector<int> filteredImage(n * m);
 
