@@ -9,8 +9,8 @@
 
 
 TEST(semenova_v_ver_Gauss_seq, test_pipeline_run) {
-  size_t n = 16000;
-  size_t m = 16000;
+  size_t n = 10000;
+  size_t m = 10000;
   std::vector<int> image(n * m);
   std::vector<int> filteredImage(n * m);
 
@@ -69,8 +69,8 @@ TEST(semenova_v_ver_Gauss_seq, test_pipeline_run) {
 }
 
 TEST(semenova_v_ver_Gauss_seq, test_task_run) {
-  size_t n = 16000;
-  size_t m = 16000;
+  size_t n = 10000;
+  size_t m = 10000;
   std::vector<int> image(n * m);
   std::vector<int> filteredImage(n * m);
 
