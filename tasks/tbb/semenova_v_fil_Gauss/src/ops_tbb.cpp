@@ -1,5 +1,6 @@
 // Copyright 2024 Semenova Veronika
 #include "tbb/semenova_v_fil_Gauss/include/ops_tbb.hpp"
+#include <tbb/tbb.h>
 
 
 int Min(int b, int c) {
