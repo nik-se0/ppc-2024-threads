@@ -28,9 +28,9 @@ bool ImageFilGauss::pre_processing() {
 
     for (int i = 0; i < n; ++i) {
       for (int j = 0; j < m; j++) {
-        image[i][j] = d[i * m + j];
+        image[i][j] = d[i * т + j];
         image[i][j] = std::max(0, std::min(255, image[i][j]));
-        filteredImage[i][j] = filteredImage[i][j];
+        filteredImage[i][j] = image[i][j];
       }
     }
   } catch (...) {
