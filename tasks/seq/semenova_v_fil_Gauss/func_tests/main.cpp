@@ -23,7 +23,7 @@ TEST(semenova_v_fil_Gauss_seq, Creat_empty_task) {
 TEST(semenova_v_fil_Gauss_seq, Creat_task_with_empty_outputs_and_inputs) {
   int n = 3;
   int m = 3;
- int* image= new int[n * m];
+  int* image= new int[n * m];
   int* filteredImage = new int[n * m];
 
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
@@ -38,6 +38,9 @@ TEST(semenova_v_fil_Gauss_seq, Creat_task_with_empty_outputs_and_inputs) {
 
   ImageFilGauss ImageFilGauss(taskDataSeq);
   ASSERT_TRUE(ImageFilGauss.validation());
+  delete[] image;
+  delete[] filteredImage;
+
 }
 TEST(semenova_v_fil_Gauss_seq, Creat_task_without_inputs1) {
   int n = 3;
@@ -52,11 +55,12 @@ TEST(semenova_v_fil_Gauss_seq, Creat_task_without_inputs1) {
 
   ImageFilGauss ImageFilGauss(taskDataSeq);
   ASSERT_FALSE(ImageFilGauss.validation());
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Creat_task_without_inputs2) {
   int n = 3;
   int m = 3;
- int* image= new int[n * m];
+  int* image= new int[n * m];
   int* filteredImage = new int[n * m];
 
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
@@ -69,6 +73,8 @@ TEST(semenova_v_fil_Gauss_seq, Creat_task_without_inputs2) {
 
   ImageFilGauss ImageFilGauss(taskDataSeq);
   ASSERT_FALSE(ImageFilGauss.validation());
+  delete[] image;
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Creat_task_without_inputs3) {
   int n = 3;
@@ -86,6 +92,7 @@ TEST(semenova_v_fil_Gauss_seq, Creat_task_without_inputs3) {
 
   ImageFilGauss ImageFilGauss(taskDataSeq);
   ASSERT_FALSE(ImageFilGauss.validation());
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Creat_task_without_outputs1) {
   int n = 3;
@@ -100,11 +107,12 @@ TEST(semenova_v_fil_Gauss_seq, Creat_task_without_outputs1) {
 
   ImageFilGauss ImageFilGauss(taskDataSeq);
   ASSERT_FALSE(ImageFilGauss.validation());
+  delete[] image;
 }
 TEST(semenova_v_fil_Gauss_seq, Creat_task_without_outputs2) {
   int n = 3;
   int m = 3;
- int* image= new int[n * m];
+  int* image= new int[n * m];
   int* filteredImage = new int[n * m];
 
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
@@ -117,11 +125,13 @@ TEST(semenova_v_fil_Gauss_seq, Creat_task_without_outputs2) {
 
   ImageFilGauss ImageFilGauss(taskDataSeq);
   ASSERT_FALSE(ImageFilGauss.validation());
+  delete[] image;
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Creat_task_without_outputs3) {
   int n = 3;
   int m = 3;
- int* image= new int[n * m];
+  int* image= new int[n * m];
 
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
 
@@ -134,13 +144,14 @@ TEST(semenova_v_fil_Gauss_seq, Creat_task_without_outputs3) {
 
   ImageFilGauss ImageFilGauss(taskDataSeq);
   ASSERT_FALSE(ImageFilGauss.validation());
+  delete[] image;
 }
 TEST(semenova_v_fil_Gauss_seq, Creat_task_with_wrong_matrix_size1) {
   int n = 3;
   int m = 3;
   int a = 6;
   int b = 6;
- int* image= new int[n * m];
+  int* image= new int[n * m];
   int* filteredImage = new int[n * m];
 
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
@@ -155,11 +166,13 @@ TEST(semenova_v_fil_Gauss_seq, Creat_task_with_wrong_matrix_size1) {
 
   ImageFilGauss ImageFilGauss(taskDataSeq);
   ASSERT_FALSE(ImageFilGauss.validation());
+  delete[] image;
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Creat_task_with_wrong_matrix_size2) {
   int n = 2;
   int m = 2;
- int* image= new int[n * m];
+  int* image= new int[n * m];
   int* filteredImage = new int[n * m];
 
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
@@ -174,11 +187,13 @@ TEST(semenova_v_fil_Gauss_seq, Creat_task_with_wrong_matrix_size2) {
 
   ImageFilGauss ImageFilGauss(taskDataSeq);
   ASSERT_FALSE(ImageFilGauss.validation());
+  delete[] image;
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Creat_task_with_outputs_and_inputs1) {
   int n = 3;
   int m = 3;
- int* image= new int[n * m];
+  int* image= new int[n * m];
   int* filteredImage = new int[n * m];
 
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
@@ -195,6 +210,8 @@ TEST(semenova_v_fil_Gauss_seq, Creat_task_with_outputs_and_inputs1) {
   if (ImageFilGauss.validation()) {
     ASSERT_TRUE(ImageFilGauss.pre_processing());
   }
+  delete[] image;
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Creat_task_with_outputs_and_inputs2) {
   int n = 3;
@@ -216,11 +233,12 @@ TEST(semenova_v_fil_Gauss_seq, Creat_task_with_outputs_and_inputs2) {
   if (ImageFilGauss.validation()) {
     ASSERT_TRUE(ImageFilGauss.pre_processing());
   }
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Run_task1) {
   int n = 3;
   int m = 3;
- int* image= new int[n * m];
+  int* image= new int[n * m];
   int* filteredImage = new int[n * m];
 
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
@@ -238,6 +256,8 @@ TEST(semenova_v_fil_Gauss_seq, Run_task1) {
     ImageFilGauss.pre_processing();
     ASSERT_TRUE(ImageFilGauss.run());
   }
+  delete[] image;
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Run_task2) {
   int n = 3;
@@ -260,11 +280,12 @@ TEST(semenova_v_fil_Gauss_seq, Run_task2) {
     ImageFilGauss.pre_processing();
     ASSERT_TRUE(ImageFilGauss.run());
   }
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Task_post_processing1) {
   int n = 3;
   int m = 3;
- int* image= new int[n * m];
+  int* image= new int[n * m];
   int* filteredImage = new int[n * m];
 
   std::shared_ptr<ppc::core::TaskData> taskDataSeq = std::make_shared<ppc::core::TaskData>();
@@ -283,6 +304,8 @@ TEST(semenova_v_fil_Gauss_seq, Task_post_processing1) {
     ImageFilGauss.run();
     ASSERT_TRUE(ImageFilGauss.post_processing());
   }
+  delete[] image;
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Task_post_processing2) {
   int n = 3;
@@ -306,6 +329,7 @@ TEST(semenova_v_fil_Gauss_seq, Task_post_processing2) {
     ImageFilGauss.run();
     ASSERT_TRUE(ImageFilGauss.post_processing());
   }
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Task_run_correct1) {
   int n = 3;
@@ -335,6 +359,7 @@ TEST(semenova_v_fil_Gauss_seq, Task_run_correct1) {
       EXPECT_EQ(filteredImage[i], res[i]);
     }
   }
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Task_run_correct2) {
   int n = 4;
@@ -364,6 +389,7 @@ TEST(semenova_v_fil_Gauss_seq, Task_run_correct2) {
       EXPECT_EQ(filteredImage[i], res[i]);
     }
   }
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Task_correct_pre_processing) {
   int n = 4;
@@ -393,11 +419,12 @@ TEST(semenova_v_fil_Gauss_seq, Task_correct_pre_processing) {
       EXPECT_EQ(filteredImage[i], res[i]);
     }
   }
+  delete[] filteredImage;
 }
 TEST(semenova_v_fil_Gauss_seq, Task_correct_with_random_image) {
   int n = 10;
   int m = 10;
- int* image= new int[n * m];
+  int* image= new int[n * m];
   int* filteredImage = new int[n * m];
   CreateRandomVector(image, n * m);
 
@@ -417,4 +444,6 @@ TEST(semenova_v_fil_Gauss_seq, Task_correct_with_random_image) {
     ImageFilGauss.run();
     ASSERT_TRUE(ImageFilGauss.post_processing());
   }
+  delete[] image;
+  delete[] filteredImage;
 }
