@@ -1,4 +1,4 @@
-d// Copyright 2024 Semenova Veronika
+// Copyright 2024 Semenova Veronika
 #include <gtest/gtest.h>
 #include <omp.h>
 
