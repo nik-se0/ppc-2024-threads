@@ -1,9 +1,9 @@
 // Copyright 2024 Semenova Veronika
 #include "tbb/semenova_v_fil_Gauss/include/ops_tbb.hpp"
 
-//#include <tbb/tbb.h>
-#include <tbb/parallel_for.h>
-#include <tbb/blocked_range2d.h>
+#include <tbb/tbb.h>
+//#include <tbb/parallel_for.h>
+//#include <tbb/blocked_range2d.h>
 
 bool ImageFilGauss::validation() {
   internal_order_test();
@@ -45,7 +45,7 @@ bool ImageFilGauss::pre_processing() {
 }
 
 bool ImageFilGauss::run() {
-  internal_order_test();/*
+  internal_order_test();
   try {
     tbb::parallel_for(
       tbb::blocked_range2d<int>(1, n - 1, 1, m - 1),
@@ -63,7 +63,7 @@ bool ImageFilGauss::run() {
     );
   } catch (...) {
     return false;
-  }*/
+  }
   return true;
 }
 
