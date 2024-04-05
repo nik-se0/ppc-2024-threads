@@ -1,7 +1,7 @@
 // Copyright 2024 Semenova Veronika
-#include <thread>
-
 #include "stl/semenova_v_fil_Gauss/include/ops_stl.hpp"
+
+#include <thread>
 
 bool ImageFilGauss::validation() {
   internal_order_test();
