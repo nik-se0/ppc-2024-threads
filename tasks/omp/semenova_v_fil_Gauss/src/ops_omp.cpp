@@ -76,7 +76,7 @@ bool ImageFilterVerGauss::post_processing() {
     int* d = reinterpret_cast<int*>(taskData->outputs[0]);
     for (int i = 0; i < n; ++i) {
       for (int j = 0; j < m; ++j) {
-        filteredImage[i][j] = std::max(0, std::min(255, filteredImage[i][j]))
+        filteredImage[i][j] = std::max(0, std::min(255, filteredImage[i][j]));
         d[i * n + j] = filteredImage[i][j];
       }
     }
