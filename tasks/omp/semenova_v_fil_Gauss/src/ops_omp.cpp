@@ -1,5 +1,5 @@
 // Copyright 2024 Semenova Veronika
-#include "omp/semenova_v_fil_Gauss/include/vgs_omp.hpp"
+#include "omp/semenova_v_fil_Gauss/include/ops_omp.hpp"
 
 #include <omp.h>
 
