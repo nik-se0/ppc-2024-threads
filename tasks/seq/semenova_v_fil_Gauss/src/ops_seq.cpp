@@ -69,13 +69,13 @@ bool ImageFilGauss::post_processing() {
   try {
     for (int i = 0; i < n; ++i) {
       for (int j = 0; j < m; ++j) {
-        image[i][j] = std::max(0, std::min(255, image[i][j]));
+        filteredImage[i][j] = std::max(0, std::min(255, filteredImage[i][j]));
       }
     }
     int* d = reinterpret_cast<int*>(taskData->outputs[0]);
     for (int i = 0; i < n; ++i) {
       for (int j = 0; j < m; ++j) {
-        d[i * m + j] = filteredImage[i][j];
+        d[i * n + j] = filteredImage[i][j];
       }
     }
 
