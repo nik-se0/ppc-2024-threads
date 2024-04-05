@@ -94,11 +94,11 @@ bool ImageFilGauss::run() {
       threads.push_back(std::thread([&, i] {
         for (int j = 1; j < m - 1; ++j) {
           double sum = 0;
-+         sum = *imageIndex(i - 1, j - 1) * kernel[0][0] + *imageIndex(i - 1, j) * kernel[0][1] +
-+               *imageIndex(i - 1, j + 1) * kernel[0][2] + *imageIndex(i, j - 1) * kernel[1][0] +
-+               *imageIndex(i, j) * kernel[1][1] + *imageIndex(i, j + 1) * kernel[1][2] +
-+               *imageIndex(i + 1, j - 1) * kernel[2][0] + *imageIndex(i + 1, j) * kernel[2][1] +
-+               *imageIndex(i + 1, j + 1) * kernel[2][2];
+          sum = *imageIndex(i - 1, j - 1) * kernel[0][0] + *imageIndex(i - 1, j) * kernel[0][1] +
+                *imageIndex(i - 1, j + 1) * kernel[0][2] + *imageIndex(i, j - 1) * kernel[1][0] +
+                *imageIndex(i, j) * kernel[1][1] + *imageIndex(i, j + 1) * kernel[1][2] +
+                *imageIndex(i + 1, j - 1) * kernel[2][0] + *imageIndex(i + 1, j) * kernel[2][1] +
+                *imageIndex(i + 1, j + 1) * kernel[2][2];
           *filteredIndex(i, j) = (int)sum;
         }
       }));
