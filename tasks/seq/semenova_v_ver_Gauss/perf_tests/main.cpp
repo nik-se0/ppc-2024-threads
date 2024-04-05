@@ -110,7 +110,7 @@ TEST(semenova_v_ver_Gauss_seq, test_task_run) {
 
   auto perfResults = std::make_shared<ppc::core::PerfResults>();
   auto perfAnalyzer = std::make_shared<ppc::core::Perf>(testTaskSeq);
-  perfAnalyzer->pipeline_run(perfAttr, perfResults);
+  perfAnalyzer->task_run(perfAttr, perfResults);
   ppc::core::Perf::print_perf_statistic(perfResults);
 
   for (size_t i = 1; i < n - 1; ++i) {
