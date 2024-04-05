@@ -79,12 +79,12 @@ bool ImageFilGauss::post_processing() {
       }
     }
 
-    for (int i = 0; i < n; ++i) {
+    /*for (int i = 0; i < n; ++i) {
       delete[] image[i];
       delete[] filteredImage[i];
     }
     delete[] image;
-    delete[] filteredImage;
+    delete[] filteredImage;*/
   }
    catch (...) {
     return false;
