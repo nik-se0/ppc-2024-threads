@@ -8,8 +8,8 @@
 #include "seq/semenova_v_fil_Gauss/include/ops_seq.hpp"
 
 TEST(semenova_v_fil_Gauss_seq, test_pipeline_run) {
-    int n = 4000;
-    int m = 4000;
+    int n = 8000;
+    int m = 8000;
     int* image = new int[n * m];
     int* filteredImage = new int[n * m];
 
@@ -72,8 +72,8 @@ TEST(semenova_v_fil_Gauss_seq, test_pipeline_run) {
 }
 
 TEST(semenova_v_fil_Gauss_seq, test_task_run) {
-    int n = 4000;
-    int m = 4000;
+    int n = 8000;
+    int m = 8000;
     int* image = new int[n * m];
     int* filteredImage = new int[n * m];
 
