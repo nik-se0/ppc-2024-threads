@@ -1,4 +1,4 @@
-// Copyright 2024 Semenova Veronika
+d// Copyright 2024 Semenova Veronika
 #include <gtest/gtest.h>
 #include <omp.h>
 
@@ -11,8 +11,8 @@
 double Timer() { return omp_get_wtime(); }
 
 TEST(semenova_v_ver_Gauss_omp, test_pipeline_run) {
-  size_t n = 4000;
-  size_t m = 4000;
+  size_t n = 8000;
+  size_t m = 8000;
   std::vector<int> image(n * m);
   std::vector<int> filteredImage(n * m);
 
@@ -66,8 +66,8 @@ TEST(semenova_v_ver_Gauss_omp, test_pipeline_run) {
 }
 
 TEST(semenova_v_ver_Gauss_omp, test_task_run) {
-  size_t n = 4000;
-  size_t m = 4000;
+  size_t n = 8000;
+  size_t m = 8000;
   std::vector<int> image(n * m);
   std::vector<int> filteredImage(n * m);
 
