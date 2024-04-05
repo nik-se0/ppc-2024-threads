@@ -10,8 +10,8 @@
 #include "omp/semenova_v_fil_Gauss/include/ops_omp.hpp"
 
 TEST(semenova_v_fil_Gauss_omp, test_pipeline_run) {
-  int n = 4000;
-  int m = 4000;
+  int n = 8000;
+  int m = 8000;
   int *image = new int[n * m];
   int *filteredImage = new int[n * m];
 
@@ -70,8 +70,8 @@ TEST(semenova_v_fil_Gauss_omp, test_pipeline_run) {
 }
 
 TEST(semenova_v_fil_Gauss_omp, test_task_run) {
-    int n = 4000;
-    int m = 4000;
+    int n = 8000;
+    int m = 8000;
     int* image = new int[n * m];
     int* filteredImage = new int[n * m];
 
